@@ -7,11 +7,12 @@ import {
   SafeAreaView,
   TouchableOpacity,
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import {LinearGradient} from 'expo-linear-gradient';
 import {COLORS, ROUTES} from '../../constants';
 import Logo from '../../assets/icons/LOGO.svg';
 
-const Login = () => {
+const Login = (props) => {
+  const {navigation} = props;
   return (
     <SafeAreaView style={styles.main}>
       <View style={styles.container}>
@@ -39,7 +40,9 @@ const Login = () => {
           </View>
 
           {/***************** FORGOT PASSWORD BUTTON *****************/}
-          <TouchableOpacity style={styles.forgotPassBtn}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate(ROUTES.FORGOT_PASSWORD, {userId: '1234'})}
+           style={styles.forgotPassBtn}>
             <Text style={styles.forgotPassText}>Forgot Password?</Text>
           </TouchableOpacity>
         </View>
@@ -47,7 +50,9 @@ const Login = () => {
         <View style={styles.footer}>
           <Text style={styles.footerText}> Don't have an account? </Text>
           {/******************** REGISTER BUTTON *********************/}
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate(ROUTES.REGISTER)}
+          >
             <Text style={styles.signupBtn}>Sign Up</Text>
           </TouchableOpacity>
         </View>
