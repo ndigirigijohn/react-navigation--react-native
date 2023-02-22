@@ -4,6 +4,7 @@ import React from 'react'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import {Home, Settings, Wallet, Notifications} from '../screens'
 import { COLORS, ROUTES } from '../constants';
+import SettingsNavigator from './SettingsNavigator';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 const Tab = createBottomTabNavigator();
 
@@ -14,6 +15,7 @@ const BottomTabNavigator = () => {
     screenOptions={
             ({route}) => ({
                 headerShown: false,
+                tabBarShowLabel: false,
                 tabBarActiveTintColor: COLORS.primary,
                 tabBarIcon: ({focused, color, size}) => {
                     let iconName;
@@ -23,7 +25,7 @@ const BottomTabNavigator = () => {
                         iconName = focused ? 'ios-wallet' : 'ios-wallet-outline';
                     } else if (route.name === ROUTES.NOTIFICATIONS) {
                         iconName = focused ? 'ios-notifications' : 'ios-notifications-outline';
-                    } else if (route.name === ROUTES.SETTINGS) {
+                    } else if (route.name === ROUTES.SETTINGS_NAVIGATOR) {
                         iconName = focused ? 'ios-settings' : 'ios-settings-outline';
                     }
                     return <Ionicons name={iconName} size={size} color={color} />;
@@ -35,7 +37,11 @@ const BottomTabNavigator = () => {
         <Tab.Screen name={ROUTES.HOME} component={Home} />
         <Tab.Screen name={ROUTES.WALLET} component={Wallet} />
         <Tab.Screen name={ROUTES.NOTIFICATIONS} component={Notifications} />
-        <Tab.Screen name={ROUTES.SETTINGS} component={Settings} />
+        <Tab.Screen name={ROUTES.SETTINGS_NAVIGATOR} component={SettingsNavigator}
+        options={{
+           tabBarLabel: 'Settings',
+        }}
+         />
     </Tab.Navigator>
   )
 }

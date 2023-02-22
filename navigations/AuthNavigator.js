@@ -20,7 +20,11 @@ const AuthNavigator = () => {
       }}
     initialRouteName={ROUTES.LOGIN}
     >
-        <Stack.Screen name={ROUTES.LOGIN}  component={Login} />
+        <Stack.Screen name={ROUTES.LOGIN}
+        options={{
+          headerShown: false
+        }}
+          component={Login} />
         <Stack.Screen name={ROUTES.FORGOT_PASSWORD} component={ForgotPassword}
         options={({route})=>({
           title: route.params.userId
