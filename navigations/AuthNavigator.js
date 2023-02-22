@@ -4,6 +4,8 @@ import {createStackNavigator} from '@react-navigation/stack'
 import {Login, ForgotPassword, Register, Home} from '../screens'
 import { COLORS, ROUTES } from '../constants'
 
+import BottomTabNavigator from './BottomTabNavigator'
+
 
 const Stack = createStackNavigator()
 const AuthNavigator = () => {
@@ -26,6 +28,12 @@ const AuthNavigator = () => {
       }
         />
         <Stack.Screen name={ROUTES.REGISTER} component={Register} />
+        <Stack.Screen
+        options={{
+          headerShown: false
+        }}
+         name={ROUTES.HOME} component={BottomTabNavigator} />
+
     </Stack.Navigator>
 
   )
