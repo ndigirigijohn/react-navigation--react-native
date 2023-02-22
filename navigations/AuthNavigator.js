@@ -5,6 +5,7 @@ import {Login, ForgotPassword, Register, Home} from '../screens'
 import { COLORS, ROUTES } from '../constants'
 
 import BottomTabNavigator from './BottomTabNavigator'
+import DrawerNavigator from './DrawerNavigator'
 
 
 const Stack = createStackNavigator()
@@ -36,7 +37,7 @@ const AuthNavigator = () => {
         options={{
           headerShown: false
         }}
-         name={ROUTES.HOME} component={BottomTabNavigator} />
+         name={ROUTES.HOME_DRAWER} component={DrawerNavigator} />
 
     </Stack.Navigator>
 

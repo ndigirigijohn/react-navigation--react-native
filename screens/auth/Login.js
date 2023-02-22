@@ -34,7 +34,7 @@ const Login = (props) => {
               end={{y: 1.0, x: 0.0}}>
               {/******************** LOGIN BUTTON *********************/}
               <TouchableOpacity
-                onPress={() => navigation.navigate(ROUTES.HOME)}
+                onPress={() => navigation.navigate(ROUTES.HOME_DRAWER)}
                activeOpacity={0.7} style={styles.loginBtn}>
                 <Text style={styles.loginText}>Log In</Text>
               </TouchableOpacity>

@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
-import {Home, Settings, Wallet, Notifications} from '../screens'
+import {Home,  Wallet, Notifications} from '../screens'
 import { COLORS, ROUTES } from '../constants';
 import SettingsNavigator from './SettingsNavigator';
 import Ionicons from 'react-native-vector-icons/Ionicons';
